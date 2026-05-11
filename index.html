@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aayush Nitin Maheshwarkar — Senior Software Engineer</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,300..900,0..100,0..1&family=JetBrains+Mono:wght@400;500&family=Sora:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg:        #0A0E14;
+      --surface:   #131922;
+      --border:    #1F2937;
+      --accent:    #E8B86D;
+      --accent-2:  #C9985C;
+      --text:      #ECECEC;
+      --muted:     #8A92A3;
+      --font-display: 'Fraunces', serif;
+      --font-body:    'Sora', sans-serif;
+      --font-mono:    'JetBrains Mono', monospace;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      background: var(--bg); color: var(--text);
+      font-family: var(--font-body); font-weight: 300;
+      line-height: 1.7; overflow-x: hidden; position: relative;
+    }
+    body::before {
+      content: ''; position: fixed; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E");
+      opacity: 0.03; pointer-events: none; z-index: 1000; mix-blend-mode: overlay;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.5rem 5%; background: rgba(10, 14, 20, 0.7);
+      backdrop-filter: blur(20px); border-bottom: 1px solid var(--border);
+    }
+    .nav-logo {
+      font-family: var(--font-display); font-weight: 600; font-size: 1.4rem;
+      font-style: italic; letter-spacing: -0.02em; color: var(--text);
+    }
+    .nav-logo span { color: var(--accent); font-style: normal; }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a {
+      font-family: var(--font-mono); font-size: 0.75rem; color: var(--muted);
+      letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.3s; position: relative;
+    }
+    .nav-links a::after {
+      content: ''; position: absolute; bottom: -4px; left: 0;
+      width: 0; height: 1px; background: var(--accent); transition: width 0.3s ease;
+    }
+    .nav-links a:hover { color: var(--accent); }
+    .nav-links a:hover::after { width: 100%; }
+
+    .container { max-width: 1180px; margin: 0 auto; padding: 0 5%; }
+    section { padding: 7rem 0; position: relative; }
+
+    #hero {
+      min-height: 100vh; display: flex; align-items: center;
+      padding-top: 6rem; position: relative; overflow: hidden;
+    }
+    .hero-marker {
+      position: absolute; top: 8rem; right: 5%;
+      font-family: var(--font-mono); font-size: 0.7rem; color: var(--muted);
+      letter-spacing: 0.2em; writing-mode: vertical-rl; text-orientation: mixed;
+    }
+    #hero::before {
+      content: ''; position: absolute; top: -300px; left: -100px;
+      width: 700px; height: 700px;
+      background: radial-gradient(circle, rgba(232, 184, 109, 0.06) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    #hero::after {
+      content: ''; position: absolute; bottom: -200px; right: -200px;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(183, 86, 60, 0.04) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .hero-content { position: relative; z-index: 1; max-width: 900px; }
+
+    .hero-status {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      font-family: var(--font-mono); font-size: 0.7rem; font-weight: 500;
+      letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent);
+      margin-bottom: 2.5rem;
+    }
+    .hero-status::before {
+      content: ''; width: 6px; height: 6px; background: var(--accent);
+      border-radius: 50%; animation: pulse 2.5s infinite;
+      box-shadow: 0 0 12px var(--accent);
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50%       { opacity: 0.4; transform: scale(0.7); }
+    }
+
+    .hero-name {
+      font-family: var(--font-display);
+      font-variation-settings: 'opsz' 144, 'wght' 700, 'SOFT' 30, 'WONK' 1;
+      font-size: clamp(3rem, 8vw, 6.5rem); font-weight: 700; color: var(--text);
+      line-height: 0.95; letter-spacing: -0.04em; margin-bottom: 0.3rem;
+    }
+    .hero-name em {
+      font-style: italic; color: var(--accent);
+      font-variation-settings: 'opsz' 144, 'wght' 400, 'SOFT' 100, 'WONK' 1; font-weight: 400;
+    }
+    .hero-name .surname {
+      display: block; font-size: clamp(2rem, 5vw, 4rem); font-weight: 300;
+      color: var(--muted); letter-spacing: -0.02em; margin-top: 0.5rem;
+    }
+
+    .hero-title {
+      font-family: var(--font-mono); font-size: 0.9rem; color: var(--muted);
+      letter-spacing: 0.1em; text-transform: uppercase; margin-top: 2rem;
+      margin-bottom: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border);
+      max-width: 600px;
+    }
+    .hero-title strong { color: var(--text); font-weight: 500; }
+
+    .hero-tagline {
+      font-family: var(--font-display); font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+      font-weight: 300; color: var(--text); max-width: 620px;
+      margin-bottom: 3rem; line-height: 1.5; letter-spacing: -0.01em;
+    }
+    .hero-tagline em { font-style: italic; color: var(--accent); }
+
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 5rem; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      font-family: var(--font-mono); font-size: 0.78rem; font-weight: 500;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 0.95rem 1.6rem; border-radius: 2px;
+      transition: all 0.3s ease; position: relative; overflow: hidden;
+    }
+    .btn-primary { background: var(--accent); color: #0A0E14; border: 1px solid var(--accent); }
+    .btn-primary:hover { background: var(--accent-2); border-color: var(--accent-2); transform: translateY(-2px); }
+    .btn-ghost { background: transparent; color: var(--muted); border: 1px solid var(--border); }
+    .btn-ghost:hover { color: var(--accent); border-color: var(--accent); transform: translateY(-2px); }
+    .btn-arrow { transition: transform 0.3s ease; }
+    .btn:hover .btn-arrow { transform: translateX(4px); }
+
+    .stats-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+      padding: 2rem 0;
+    }
+    .stat-item { padding: 0.5rem 1.5rem; border-right: 1px solid var(--border); position: relative; }
+    .stat-item:last-child { border-right: none; }
+    .stat-num {
+      font-family: var(--font-display); font-variation-settings: 'opsz' 144, 'wght' 600;
+      font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 600; color: var(--text);
+      line-height: 1; letter-spacing: -0.02em; margin-bottom: 0.3rem;
+    }
+    .stat-num em { font-style: italic; color: var(--accent); }
+    .stat-label {
+      font-family: var(--font-mono); font-size: 0.7rem; color: var(--muted);
+      letter-spacing: 0.12em; text-transform: uppercase;
+    }
+
+    .section-header {
+      display: flex; align-items: baseline; gap: 2rem;
+      margin-bottom: 4rem; position: relative;
+    }
+    .section-number {
+      font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent);
+      letter-spacing: 0.15em; flex-shrink: 0;
+    }
+    .section-title {
+      font-family: var(--font-display);
+      font-variation-settings: 'opsz' 144, 'wght' 500, 'SOFT' 50, 'WONK' 1;
+      font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 500; color: var(--text);
+      line-height: 1; letter-spacing: -0.03em;
+    }
+    .section-title em {
+      font-style: italic; color: var(--accent);
+      font-variation-settings: 'opsz' 144, 'wght' 400, 'SOFT' 100, 'WONK' 1;
+    }
+    .section-line { flex: 1; height: 1px; background: var(--border); margin-left: auto; }
+
+    #experience { border-top: 1px solid var(--border); }
+    .exp-list { display: flex; flex-direction: column; }
+    .exp-item {
+      display: grid; grid-template-columns: 200px 1fr; gap: 3rem;
+      padding: 3rem 0; border-bottom: 1px solid var(--border);
+      transition: background 0.3s ease; align-items: start;
+    }
+    .exp-item:hover { background: rgba(232, 184, 109, 0.02); }
+    .exp-date {
+      font-family: var(--font-mono); font-size: 0.75rem; color: var(--muted);
+      letter-spacing: 0.1em; text-transform: uppercase; padding-top: 0.4rem;
+    }
+    .exp-role {
+      font-family: var(--font-display); font-variation-settings: 'opsz' 144, 'wght' 600;
+      font-size: 1.5rem; font-weight: 600; color: var(--text);
+      margin-bottom: 0.4rem; letter-spacing: -0.01em;
+    }
+    .exp-company {
+      font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent);
+      letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.4rem;
+    }
+    .exp-progression {
+      font-family: var(--font-body); font-size: 0.85rem; color: var(--muted);
+      font-style: italic; margin-bottom: 1.5rem;
+    }
+    .exp-bullets { list-style: none; display: flex; flex-direction: column; gap: 0.85rem; margin-top: 1rem; }
+    .exp-bullets li {
+      font-size: 0.95rem; color: var(--muted); padding-left: 1.4rem;
+      position: relative; line-height: 1.65;
+    }
+    .exp-bullets li::before {
+      content: '→'; position: absolute; left: 0; top: 0.05rem;
+      color: var(--accent); font-family: var(--font-mono); font-size: 0.85rem;
+    }
+    .exp-bullets li strong { color: var(--text); font-weight: 500; }
+    .exp-bullets li em {
+      font-family: var(--font-display); font-style: italic;
+      color: var(--accent); font-weight: 400;
+    }
+
+    #skills { border-top: 1px solid var(--border); }
+    .skills-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2px; background: var(--border); border: 1px solid var(--border);
+    }
+    .skill-block { background: var(--bg); padding: 2rem 1.75rem; transition: background 0.3s; }
+    .skill-block:hover { background: var(--surface); }
+    .skill-cat {
+      font-family: var(--font-mono); font-size: 0.7rem; color: var(--accent);
+      letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 1rem; display: block;
+    }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .skill-tag {
+      font-size: 0.82rem; color: var(--text); padding: 0.25rem 0.65rem;
+      background: rgba(232, 184, 109, 0.06); border: 1px solid var(--border);
+      border-radius: 2px; transition: all 0.2s;
+    }
+    .skill-tag:hover { border-color: var(--accent); color: var(--accent); }
+    .skill-tag.cert {
+      background: rgba(232, 184, 109, 0.1); border-color: rgba(232, 184, 109, 0.3);
+      color: var(--accent); font-style: italic;
+    }
+
+    #achievements { border-top: 1px solid var(--border); }
+    .ach-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 2rem; }
+    .ach-card {
+      background: var(--surface); border: 1px solid var(--border);
+      padding: 2.5rem; position: relative; overflow: hidden; transition: all 0.4s ease;
+    }
+    .ach-card::before {
+      content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 0;
+      background: var(--accent); transition: height 0.4s ease;
+    }
+    .ach-card:hover::before { height: 100%; }
+    .ach-card:hover { transform: translateY(-4px); border-color: rgba(232, 184, 109, 0.3); }
+    .ach-year {
+      font-family: var(--font-mono); font-size: 0.7rem; color: var(--accent);
+      letter-spacing: 0.15em; margin-bottom: 0.8rem;
+    }
+    .ach-title {
+      font-family: var(--font-display); font-size: 1.4rem; font-weight: 500;
+      color: var(--text); margin-bottom: 1rem; line-height: 1.2; letter-spacing: -0.01em;
+    }
+    .ach-desc { font-size: 0.92rem; color: var(--muted); line-height: 1.65; }
+    .ach-link {
+      display: inline-flex; align-items: center; gap: 0.4rem; margin-top: 1.2rem;
+      font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent);
+      letter-spacing: 0.05em; transition: gap 0.3s;
+    }
+    .ach-link:hover { gap: 0.7rem; }
+
+    #education { border-top: 1px solid var(--border); }
+    .edu-list { display: flex; flex-direction: column; }
+    .edu-row {
+      display: grid; grid-template-columns: 200px 1fr auto;
+      gap: 2rem; padding: 1.5rem 0; border-bottom: 1px solid var(--border);
+      align-items: center; transition: background 0.3s;
+    }
+    .edu-row:hover { background: rgba(232, 184, 109, 0.02); }
+    .edu-row:last-child { border-bottom: none; }
+    .edu-dates {
+      font-family: var(--font-mono); font-size: 0.75rem;
+      color: var(--muted); letter-spacing: 0.1em;
+    }
+    .edu-degree {
+      font-family: var(--font-display); font-size: 1.05rem; font-weight: 500;
+      color: var(--text); letter-spacing: -0.01em; margin-bottom: 0.2rem;
+    }
+    .edu-school { font-size: 0.82rem; color: var(--muted); }
+    .edu-school em {
+      color: var(--accent); font-style: italic;
+      font-family: var(--font-display); font-weight: 500;
+    }
+    .edu-gpa {
+      font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent);
+      text-align: right; white-space: nowrap;
+    }
+
+    #contact {
+      border-top: 1px solid var(--border); padding: 9rem 0 7rem;
+      text-align: center; position: relative; overflow: hidden;
+    }
+    #contact::before {
+      content: ''; position: absolute; top: 50%; left: 50%;
+      width: 800px; height: 800px;
+      background: radial-gradient(circle, rgba(232, 184, 109, 0.04) 0%, transparent 60%);
+      transform: translate(-50%, -50%); pointer-events: none;
+    }
+    .contact-content { position: relative; z-index: 1; }
+    .contact-prompt {
+      font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent);
+      letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1.5rem;
+    }
+    .contact-headline {
+      font-family: var(--font-display);
+      font-variation-settings: 'opsz' 144, 'wght' 400, 'SOFT' 80, 'WONK' 1;
+      font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 400; color: var(--text);
+      line-height: 1.05; letter-spacing: -0.03em; margin-bottom: 1rem;
+    }
+    .contact-headline em { font-style: italic; color: var(--accent); }
+    .contact-sub {
+      color: var(--muted); font-size: 1.05rem; max-width: 500px;
+      margin: 0 auto 3rem; line-height: 1.6;
+    }
+    .contact-actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem; }
+
+    footer {
+      padding: 2.5rem 5%; border-top: 1px solid var(--border);
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 1rem;
+    }
+    .footer-text {
+      font-family: var(--font-mono); font-size: 0.72rem;
+      color: var(--muted); letter-spacing: 0.08em;
+    }
+
+    .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+    .counter { display: inline-block; }
+
+    @media (max-width: 768px) {
+      nav { padding: 1rem 5%; }
+      .nav-links { display: none; }
+      .hero-marker { display: none; }
+      section { padding: 4rem 0; }
+      .exp-item { grid-template-columns: 1fr; gap: 1rem; }
+      .exp-date { padding-top: 0; }
+      .edu-row { grid-template-columns: 1fr; gap: 0.4rem; }
+      .edu-gpa { text-align: left; }
+      .section-header { flex-wrap: wrap; }
+      .section-line { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="#hero" class="nav-logo">Aayush<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="#experience">01 Work</a></li>
+      <li><a href="#skills">02 Skills</a></li>
+      <li><a href="#achievements">03 Recognition</a></li>
+      <li><a href="#education">04 Education</a></li>
+      <li><a href="#contact">05 Contact</a></li>
+    </ul>
+  </nav>
+
+  <section id="hero">
+    <div class="hero-marker">// AVAILABLE FOR SENIOR ROLES</div>
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-status">Open to Opportunities</div>
+        <h1 class="hero-name">
+          Aayush <em>Nitin</em>
+          <span class="surname">Maheshwarkar.</span>
+        </h1>
+        <p class="hero-title">
+          <strong>Senior Software Engineer</strong> · Java · Spring Boot · Microservices · Agentic AI
+        </p>
+        <p class="hero-tagline">
+          I build <em>revenue-critical</em> enterprise platforms at scale.
+          Five years contributing to FedEx systems generating over $600M in
+          annualized revenue and handling 2.5M+ daily transactions.
+        </p>
+        <div class="hero-actions">
+          <a href="resume.pdf" class="btn btn-primary" target="_blank">↓ Download Resume</a>
+          <a href="https://linkedin.com/in/aayush-nitin-maheshwarkar" class="btn btn-ghost" target="_blank">
+            LinkedIn <span class="btn-arrow">→</span>
+          </a>
+          <a href="https://github.com/AayushNM" class="btn btn-ghost" target="_blank">
+            GitHub <span class="btn-arrow">→</span>
+          </a>
+        </div>
+        <div class="stats-grid">
+          <div class="stat-item">
+            <div class="stat-num"><em>$</em><span data-target="600" class="counter">0</span>M+</div>
+            <div class="stat-label">Revenue Impact</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num"><em>$</em><span data-target="1.8" data-decimal="true" class="counter">0</span>BN</div>
+            <div class="stat-label">Quoted Revenue · QP</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num"><span data-target="34" class="counter">0</span>K+</div>
+            <div class="stat-label">Customer Migrations</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num"><span data-target="2.5" data-decimal="true" class="counter">0</span>M+</div>
+            <div class="stat-label">Daily Requests</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-number">01 / Career</span>
+        <h2 class="section-title">Selected <em>Work</em></h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="exp-list">
+        <div class="exp-item fade-in">
+          <div class="exp-date">Jul 2021 — Jun 2026</div>
+          <div>
+            <div class="exp-role">Senior Software Engineer</div>
+            <div class="exp-company">Federal Express Corporation · Orlando, FL</div>
+            <div class="exp-progression">Promotion: Full Stack Developer II → III (Feb 2023)</div>
+            <ul class="exp-bullets">
+              <li><strong>$600M+ revenue impact</strong> — Developed and maintained enterprise Java and Spring Boot rating microservices serving 2.5M+ peak daily rate requests across the global rating platform.</li>
+              <li><strong>Quote Platform — <em>$450M billed / $1.8B quoted</em> across 69 markets</strong>: Modernized backend rating logic to support spot pricing outside contractual rates; FY23 contribution drove FedEx Hall of Fame recognition (FY24).</li>
+              <li><strong>Surcharge engine — $150M+ annualized revenue</strong> — Developed core Java/Spring Boot engine exposed via REST APIs for high-throughput surcharge assessment.</li>
+              <li><strong>Dangerous Goods Road — $41M direct + $1.2B linked</strong> — Led end-to-end development of dangerous-goods routing using Feign clients and a configurable rules engine; enabled migration of 34,000+ enterprise customers.</li>
+              <li><strong>~600ms latency reduction</strong> on customer-facing rate-quote API through proactive Okta JWT pre-caching using Caffeine refreshAfterWrite with async refresh.</li>
+              <li><strong>Production AI Governance — Microsoft Copilot</strong>: Owned quality standards and final-approval authority for LLM instruction sets across multiple enterprise platforms.</li>
+              <li><strong>Agentic AI pipeline — LangChain + Claude</strong>: Contributed to an agentic pipeline handling a projected 10x surge in error-correction volume, eliminating a 5-day manual remediation cycle.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="exp-item fade-in">
+          <div class="exp-date">Aug 2019 — Dec 2020</div>
+          <div>
+            <div class="exp-role">Teaching Assistant &amp; Research Co-Author</div>
+            <div class="exp-company">Rensselaer Polytechnic Institute · Troy, NY</div>
+            <ul class="exp-bullets">
+              <li>Mentored <strong>300+ students</strong> across Computer Organization (C, MIPS, x86 assembly) and Intro to Formal Logic and AI; conducted code reviews and supported proof construction in HyperSlate.</li>
+              <li>Co-authored <strong>peer-reviewed research</strong> published at the <em>AAAI 2020 Fall Symposium on AI for Social Good</em> — analyzed UN, UNICEF, and WHO datasets across 34 countries using Python and R.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-number">02 / Stack</span>
+        <h2 class="section-title">Technical <em>Toolkit</em></h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-block">
+          <span class="skill-cat">Languages</span>
+          <div class="skill-tags">
+            <span class="skill-tag">Java</span>
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">SQL</span>
+            <span class="skill-tag">Shell Scripting</span>
+            <span class="skill-tag">C</span>
+          </div>
+        </div>
+        <div class="skill-block">
+          <span class="skill-cat">Backend &amp; Microservices</span>
+          <div class="skill-tags">
+            <span class="skill-tag">Spring Boot</span>
+            <span class="skill-tag">Spring Cloud</span>
+            <span class="skill-tag">Hibernate/JPA</span>
+            <span class="skill-tag">REST APIs</span>
+            <span class="skill-tag">Feign</span>
+            <span class="skill-tag">Resilience4j</span>
+            <span class="skill-tag">JMS Messaging</span>
+            <span class="skill-tag">Eureka</span>
+          </div>
+        </div>
+        <div class="skill-block">
+          <span class="skill-cat">Cloud &amp; DevOps</span>
+          <div class="skill-tags">
+            <span class="skill-tag cert">AWS SAA · In Progress</span>
+            <span class="skill-tag">Docker</span>
+            <span class="skill-tag">Jenkins CI/CD</span>
+            <span class="skill-tag">Gradle</span>
+            <span class="skill-tag">Linux</span>
+            <span class="skill-tag">Git</span>
+          </div>
+        </div>
+        <div class="skill-block">
+          <span class="skill-cat">Security</span>
+          <div class="skill-tags">
+            <span class="skill-tag">OAuth 2.0</span>
+            <span class="skill-tag">SSO</span>
+            <span class="skill-tag">Okta</span>
+            <span class="skill-tag">JWT</span>
+            <span class="skill-tag">Spring Security</span>
+          </div>
+        </div>
+        <div class="skill-block">
+          <span class="skill-cat">Databases &amp; Caching</span>
+          <div class="skill-tags">
+            <span class="skill-tag">PostgreSQL</span>
+            <span class="skill-tag">Oracle</span>
+            <span class="skill-tag">MySQL</span>
+            <span class="skill-tag">MongoDB</span>
+            <span class="skill-tag">Redis</span>
+            <span class="skill-tag">Caffeine</span>
+          </div>
+        </div>
+        <div class="skill-block">
+          <span class="skill-cat">Observability</span>
+          <div class="skill-tags">
+            <span class="skill-tag">Splunk</span>
+            <span class="skill-tag">Dynatrace</span>
+            <span class="skill-tag">Grafana</span>
+            <span class="skill-tag">AppDynamics</span>
+          </div>
+        </div>
+        <div class="skill-block">
+          <span class="skill-cat">AI &amp; LLMs</span>
+          <div class="skill-tags">
+            <span class="skill-tag">Agentic AI System Design</span>
+            <span class="skill-tag">AI Governance</span>
+            <span class="skill-tag">LangChain</span>
+            <span class="skill-tag">LLM Instruction Engineering</span>
+            <span class="skill-tag">Prompt Evaluation</span>
+            <span class="skill-tag">Microsoft Copilot</span>
+            <span class="skill-tag">Claude</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="achievements">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-number">03 / Recognition</span>
+        <h2 class="section-title">Selected <em>Honors</em></h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="ach-grid">
+        <div class="ach-card fade-in">
+          <div class="ach-year">FY24 · TEAM AWARD</div>
+          <div class="ach-title">FedEx Hall of Fame Award</div>
+          <div class="ach-desc">Recognized for contributions to modernizing rating logic in support of the Quote Platform initiative — realizing $450M in billed revenue and $1.8BN in quoted revenue across 69 global markets in FY23.</div>
+        </div>
+        <div class="ach-card fade-in">
+          <div class="ach-year">2020 · PEER-REVIEWED</div>
+          <div class="ach-title">AAAI Fall Symposium · Co-Author</div>
+          <div class="ach-desc">"Socioeconomic and Geographic Variations Impacting the Spread of Malaria." Published at the AAAI Fall Symposium on AI for Social Good. Cluster analysis of UN, UNICEF, and WHO datasets across 34 countries using Python and R.</div>
+          <a href="https://github.com/thilankam/MalariaAnalysis" class="ach-link" target="_blank">View on GitHub →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-number">04 / Academia</span>
+        <h2 class="section-title"><em>Education</em></h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="edu-list">
+        <div class="edu-row fade-in">
+          <div class="edu-dates">Aug 2025 — Present</div>
+          <div>
+            <div class="edu-degree">M.S. Organizational Leadership <em>(In Progress)</em></div>
+            <div class="edu-school">University of the Cumberlands</div>
+          </div>
+          <div class="edu-gpa">—</div>
+        </div>
+        <div class="edu-row fade-in">
+          <div class="edu-dates">Jan 2024 — Aug 2025</div>
+          <div>
+            <div class="edu-degree">M.S. Project Management</div>
+            <div class="edu-school">University of the Cumberlands</div>
+          </div>
+          <div class="edu-gpa">CGPA 3.971 / 4.0</div>
+        </div>
+        <div class="edu-row fade-in">
+          <div class="edu-dates">Aug 2019 — Dec 2020</div>
+          <div>
+            <div class="edu-degree">M.S. Information Technology</div>
+            <div class="edu-school">Rensselaer Polytechnic Institute · Troy, NY</div>
+          </div>
+          <div class="edu-gpa">CGPA 3.8 / 4.0</div>
+        </div>
+        <div class="edu-row fade-in">
+          <div class="edu-dates">Aug 2015 — Jul 2019</div>
+          <div>
+            <div class="edu-degree">B.Tech Electronics &amp; Communication <em>(Minor: CS)</em></div>
+            <div class="edu-school">PES University · Bengaluru, India</div>
+          </div>
+          <div class="edu-gpa">CGPA 7.63 / 10</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <div class="contact-content">
+        <div class="contact-prompt">// LET'S TALK</div>
+        <h2 class="contact-headline">Open to <em>Senior Engineering</em><br />Opportunities.</h2>
+        <p class="contact-sub">Available for remote, hybrid, and on-site roles. Based in Orlando, FL. Open to relocation for the right opportunity.</p>
+        <div class="contact-actions">
+          <a href="https://linkedin.com/in/aayush-nitin-maheshwarkar" class="btn btn-primary" target="_blank">
+            Connect on LinkedIn <span class="btn-arrow">→</span>
+          </a>
+          <a href="https://github.com/AayushNM" class="btn btn-ghost" target="_blank">
+            GitHub <span class="btn-arrow">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-text">© 2026 · AAYUSH NITIN MAHESHWARKAR</div>
+    <div class="footer-text">BUILT WITH HTML · CSS · JAVASCRIPT</div>
+  </footer>
+
+  <script>
+    function animateCounters() {
+      const counters = document.querySelectorAll('.counter');
+      const duration = 2200;
+      counters.forEach(counter => {
+        const target  = parseFloat(counter.dataset.target);
+        const decimal = counter.dataset.decimal === 'true';
+        const startTime = performance.now();
+        function update(currentTime) {
+          const elapsed  = currentTime - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          const eased    = 1 - Math.pow(1 - progress, 3);
+          const current  = eased * target;
+          counter.textContent = decimal ? current.toFixed(1) : Math.round(current);
+          if (progress < 1) requestAnimationFrame(update);
+        }
+        requestAnimationFrame(update);
+      });
+    }
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    window.addEventListener('load', animateCounters);
+  </script>
+</body>
+</html>
