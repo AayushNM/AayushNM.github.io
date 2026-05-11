@@ -1,2 +1,5 @@
-# AayushNM.github.io
-Personal developer portfolio showcasing my Java/Spring Boot backend engineering, REST API projects, AI automation work, system design learning, and production-focused software development experience.
+# Aayush Nitin Maheshwarkar - Portfolio
+
+This repository hosts my personal portfolio website, including my resume, technical background, selected engineering work, and professional experience.
+
+I’m a Senior Software Engineer focused on Java/Spring Boot backend systems, REST APIs, distributed platforms, and AI-assisted automation.
