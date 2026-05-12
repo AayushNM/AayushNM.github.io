@@ -5,15 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Aayush Nitin Maheshwarkar — Senior Software Engineer</title>
 
-  <meta name="description" content="Aayush Nitin Maheshwarkar — Senior Software Engineer specializing in Java/Spring Boot backend systems, REST APIs, distributed platforms, and agentic AI automation." />
-  <meta property="og:title" content="Aayush Nitin Maheshwarkar — Senior Software Engineer" />
-  <meta property="og:description" content="Portfolio and resume for a Senior Software Engineer focused on Java/Spring Boot backend systems, distributed platforms, REST APIs, and agentic AI automation." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://aayushnm.github.io/" />
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Aayush Nitin Maheshwarkar — Senior Software Engineer" />
-  <meta name="twitter:description" content="Java/Spring Boot backend systems, distributed platforms, REST APIs, and agentic AI automation." />
-
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,300..900,0..100,0..1&family=JetBrains+Mono:wght@400;500&family=Sora:wght@300;400;500;600&display=swap" rel="stylesheet" />
@@ -26,7 +17,7 @@
       --accent:    #E8B86D;
       --accent-2:  #C9985C;
       --text:      #ECECEC;
-      --muted:     #8A92A3;
+      --muted:     #A0A8B8;
       --font-display: 'Fraunces', serif;
       --font-body:    'Sora', sans-serif;
       --font-mono:    'JetBrains Mono', monospace;
@@ -56,7 +47,7 @@
       font-style: italic; letter-spacing: -0.02em; color: var(--text);
     }
     .nav-logo span { color: var(--accent); font-style: normal; }
-    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
     .nav-links a {
       font-family: var(--font-mono); font-size: 0.75rem; color: var(--muted);
       letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.3s; position: relative;
@@ -67,6 +58,19 @@
     }
     .nav-links a:hover { color: var(--accent); }
     .nav-links a:hover::after { width: 100%; }
+
+    /* Sticky Contact CTA in nav */
+    .nav-cta {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-family: var(--font-mono); font-size: 0.72rem; font-weight: 500;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 0.6rem 1.1rem; border-radius: 2px;
+      background: var(--accent); color: #0A0E14;
+      transition: all 0.3s ease;
+    }
+    .nav-cta:hover { background: var(--accent-2); transform: translateY(-1px); }
+    .nav-cta .btn-arrow { transition: transform 0.3s ease; }
+    .nav-cta:hover .btn-arrow { transform: translateX(3px); }
 
     .container { max-width: 1180px; margin: 0 auto; padding: 0 5%; }
     section { padding: 7rem 0; position: relative; }
@@ -129,14 +133,14 @@
       font-family: var(--font-mono); font-size: 0.9rem; color: var(--muted);
       letter-spacing: 0.1em; text-transform: uppercase; margin-top: 2rem;
       margin-bottom: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border);
-      max-width: 650px;
+      max-width: 600px;
     }
     .hero-title strong { color: var(--text); font-weight: 500; }
 
     .hero-tagline {
-      font-family: var(--font-display); font-size: clamp(1.05rem, 1.65vw, 1.3rem);
-      font-weight: 300; color: var(--text); max-width: 760px;
-      margin-bottom: 3rem; line-height: 1.55; letter-spacing: -0.01em;
+      font-family: var(--font-display); font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+      font-weight: 300; color: var(--text); max-width: 620px;
+      margin-bottom: 3rem; line-height: 1.5; letter-spacing: -0.01em;
     }
     .hero-tagline em { font-style: italic; color: var(--accent); }
 
@@ -156,11 +160,11 @@
     .btn:hover .btn-arrow { transform: translateX(4px); }
 
     .stats-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
       gap: 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
       padding: 2rem 0;
     }
-    .stat-item { padding: 0.5rem 1.5rem; border-right: 1px solid var(--border); position: relative; }
+    .stat-item { padding: 0.5rem 1.25rem; border-right: 1px solid var(--border); position: relative; }
     .stat-item:last-child { border-right: none; }
     .stat-num {
       font-family: var(--font-display); font-variation-settings: 'opsz' 144, 'wght' 600;
@@ -315,6 +319,32 @@
       border-top: 1px solid var(--border); padding: 9rem 0 7rem;
       text-align: center; position: relative; overflow: hidden;
     }
+
+    /* What I'm Looking For section */
+    .looking-content {
+      max-width: 760px;
+    }
+    .looking-lead {
+      font-family: var(--font-display);
+      font-size: clamp(1.3rem, 2.2vw, 1.7rem);
+      font-weight: 300; color: var(--text);
+      line-height: 1.5; letter-spacing: -0.01em;
+      margin-bottom: 2.5rem;
+    }
+    .looking-lead em {
+      font-style: italic; color: var(--accent); font-weight: 400;
+    }
+    .looking-tags {
+      display: flex; flex-wrap: wrap; gap: 0.6rem;
+    }
+    .looking-tag {
+      font-family: var(--font-mono); font-size: 0.78rem;
+      color: var(--accent); letter-spacing: 0.05em;
+      padding: 0.4rem 0.9rem;
+      background: rgba(232, 184, 109, 0.06);
+      border: 1px solid rgba(232, 184, 109, 0.2);
+      border-radius: 2px;
+    }
     #contact::before {
       content: ''; position: absolute; top: 50%; left: 50%;
       width: 800px; height: 800px;
@@ -356,6 +386,7 @@
     @media (max-width: 768px) {
       nav { padding: 1rem 5%; }
       .nav-links { display: none; }
+      .nav-cta { padding: 0.5rem 0.85rem; font-size: 0.65rem; }
       .hero-marker { display: none; }
       section { padding: 4rem 0; }
       .exp-item { grid-template-columns: 1fr; gap: 1rem; }
@@ -364,6 +395,8 @@
       .edu-gpa { text-align: left; }
       .section-header { flex-wrap: wrap; }
       .section-line { display: none; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .stat-item { border-right: none; border-bottom: 1px solid var(--border); padding: 1rem; }
     }
   </style>
 </head>
@@ -376,9 +409,8 @@
       <li><a href="#skills">02 Skills</a></li>
       <li><a href="#achievements">03 Recognition</a></li>
       <li><a href="#education">04 Education</a></li>
-      <li><a href="#contact">05 Contact</a></li>
-      <li><a href="./resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a></li>
     </ul>
+    <a href="#contact" class="nav-cta">Get in Touch <span class="btn-arrow">→</span></a>
   </nav>
 
   <section id="hero">
@@ -401,15 +433,12 @@
           and production AI workflows using LangChain and Claude.
         </p>
         <div class="hero-actions">
-          <a href="./resume.pdf" class="btn btn-primary" target="_blank" rel="noopener noreferrer" aria-label="View Aayush Nitin Maheshwarkar resume PDF">↓ View Resume</a>
-          <a href="https://linkedin.com/in/aayush-nitin-maheshwarkar" class="btn btn-ghost" target="_blank" rel="noopener noreferrer" aria-label="Visit Aayush Nitin Maheshwarkar LinkedIn profile">
+          <a href="resume.pdf" class="btn btn-primary" target="_blank">↓ Download Resume</a>
+          <a href="https://linkedin.com/in/aayush-nitin-maheshwarkar" class="btn btn-ghost" target="_blank">
             LinkedIn <span class="btn-arrow">→</span>
           </a>
-          <a href="https://github.com/AayushNM" class="btn btn-ghost" target="_blank" rel="noopener noreferrer" aria-label="Visit Aayush Nitin Maheshwarkar GitHub profile">
+          <a href="https://github.com/AayushNM" class="btn btn-ghost" target="_blank">
             GitHub <span class="btn-arrow">→</span>
-          </a>
-          <a href="mailto:aayushmaheshwarkar@gmail.com" class="btn btn-ghost" aria-label="Email Aayush Nitin Maheshwarkar">
-            Email <span class="btn-arrow">→</span>
           </a>
         </div>
         <div class="stats-grid">
@@ -418,16 +447,20 @@
             <div class="stat-label">Revenue Impact</div>
           </div>
           <div class="stat-item">
-            <div class="stat-num"><em>$</em><span data-target="1.8" data-decimal="true" class="counter">0</span>BN</div>
-            <div class="stat-label">Quoted Revenue · QP</div>
+            <div class="stat-num"><span data-target="2.5" data-decimal="true" class="counter">0</span>M+</div>
+            <div class="stat-label">Daily Requests</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num"><em>~</em><span data-target="600" class="counter">0</span>ms</div>
+            <div class="stat-label">Latency Reduction</div>
           </div>
           <div class="stat-item">
             <div class="stat-num"><span data-target="34" class="counter">0</span>K+</div>
             <div class="stat-label">Customer Migrations</div>
           </div>
           <div class="stat-item">
-            <div class="stat-num"><span data-target="2.5" data-decimal="true" class="counter">0</span>M+</div>
-            <div class="stat-label">Daily Requests</div>
+            <div class="stat-num"><em>$</em><span data-target="1.8" data-decimal="true" class="counter">0</span>BN</div>
+            <div class="stat-label">Quoted Revenue · QP</div>
           </div>
         </div>
       </div>
@@ -438,7 +471,7 @@
     <div class="container">
       <div class="section-header">
         <span class="section-number">01 / Career</span>
-        <h2 class="section-title">Selected <em>Work</em></h2>
+        <h2 class="section-title">Work <em>Experience</em></h2>
         <div class="section-line"></div>
       </div>
       <div class="exp-list">
@@ -455,8 +488,7 @@
               <li><strong>Dangerous Goods Road — $41M direct + $1.2B linked</strong> — Led end-to-end development of dangerous-goods routing using Feign clients and a configurable rules engine; enabled migration of 34,000+ enterprise customers.</li>
               <li><strong>~600ms latency reduction</strong> on customer-facing rate-quote API through proactive Okta JWT pre-caching using Caffeine refreshAfterWrite with async refresh.</li>
               <li><strong>Production AI Governance — Microsoft Copilot</strong>: Owned quality standards and final-approval authority for LLM instruction sets across multiple enterprise platforms.</li>
-              <li><strong>Agentic AI pipeline — LangChain + Claude</strong>: Built configurable retry and resubmission controls for an AI-driven error-correction pipeline, helping eliminate a 5-day manual remediation cycle and prepare for a projected 10x increase in correction volume.</li>
-              <li><strong>Cache Optimization — Caffeine Loading Cache</strong>: Implemented Caffeine Loading Cache across REBS services by identifying ideal cache candidates to maintain pre-loaded cache state, reducing downstream service calls and improving rating pipeline performance.</li>
+              <li><strong>Agentic AI pipeline — LangChain + Claude</strong>: Contributed to an agentic pipeline handling a projected 10x surge in error-correction volume, eliminating a 5-day manual remediation cycle.</li>
             </ul>
           </div>
         </div>
@@ -468,16 +500,6 @@
             <ul class="exp-bullets">
               <li>Mentored <strong>300+ students</strong> across Computer Organization (C, MIPS, x86 assembly) and Intro to Formal Logic and AI; conducted code reviews and supported proof construction in HyperSlate.</li>
               <li>Co-authored <strong>peer-reviewed research</strong> published at the <em>AAAI 2020 Fall Symposium on AI for Social Good</em> — analyzed UN, UNICEF, and WHO datasets across 34 countries using Python and R.</li>
-            </ul>
-          </div>
-        </div>
-        <div class="exp-item fade-in">
-          <div class="exp-date">Jan 2019 — Jul 2019</div>
-          <div>
-            <div class="exp-role">Software Engineer Intern</div>
-            <div class="exp-company">IBM India Pvt. Ltd. · Bangalore, India</div>
-            <ul class="exp-bullets">
-              <li>Performed performance and capacity planning for CICS Transaction Gateway v9.2 using z/OS, JCL, Java, and REST/JSON services; identified and resolved production performance bottlenecks.</li>
             </ul>
           </div>
         </div>
@@ -577,7 +599,7 @@
     <div class="container">
       <div class="section-header">
         <span class="section-number">03 / Recognition</span>
-        <h2 class="section-title">Selected <em>Honors</em></h2>
+        <h2 class="section-title">Awards &amp; <em>Publications</em></h2>
         <div class="section-line"></div>
       </div>
       <div class="ach-grid">
@@ -590,7 +612,7 @@
           <div class="ach-year">2020 · PEER-REVIEWED</div>
           <div class="ach-title">AAAI Fall Symposium · Co-Author</div>
           <div class="ach-desc">"Socioeconomic and Geographic Variations Impacting the Spread of Malaria." Published at the AAAI Fall Symposium on AI for Social Good. Cluster analysis of UN, UNICEF, and WHO datasets across 34 countries using Python and R.</div>
-          <a href="https://github.com/thilankam/MalariaAnalysis" class="ach-link" target="_blank" rel="noopener noreferrer">View on GitHub →</a>
+          <a href="https://github.com/thilankam/MalariaAnalysis" class="ach-link" target="_blank">View on GitHub →</a>
         </div>
       </div>
     </div>
@@ -605,22 +627,6 @@
       </div>
       <div class="edu-list">
         <div class="edu-row fade-in">
-          <div class="edu-dates">Aug 2025 — Present</div>
-          <div>
-            <div class="edu-degree">M.S. Organizational Leadership <em>(In Progress)</em></div>
-            <div class="edu-school">University of the Cumberlands</div>
-          </div>
-          <div class="edu-gpa">—</div>
-        </div>
-        <div class="edu-row fade-in">
-          <div class="edu-dates">Jan 2024 — Aug 2025</div>
-          <div>
-            <div class="edu-degree">M.S. Project Management</div>
-            <div class="edu-school">University of the Cumberlands</div>
-          </div>
-          <div class="edu-gpa">CGPA 3.971 / 4.0</div>
-        </div>
-        <div class="edu-row fade-in">
           <div class="edu-dates">Aug 2019 — Dec 2020</div>
           <div>
             <div class="edu-degree">M.S. Information Technology</div>
@@ -631,10 +637,35 @@
         <div class="edu-row fade-in">
           <div class="edu-dates">Aug 2015 — Jul 2019</div>
           <div>
-            <div class="edu-degree">B.Tech Electronics &amp; Communication <em>(Minor: CS)</em></div>
+            <div class="edu-degree">B.Tech Electronics &amp; Communication <em>(Minor: CS · 8.95/10)</em></div>
             <div class="edu-school">PES University · Bengaluru, India</div>
           </div>
           <div class="edu-gpa">CGPA 7.63 / 10</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT I'M LOOKING FOR -->
+  <section id="looking" style="border-top: 1px solid var(--border);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-number">05 / Now</span>
+        <h2 class="section-title">What I'm <em>Looking For</em></h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="looking-content">
+        <p class="looking-lead">
+          I'm interested in <em>senior backend</em> and <em>platform engineering</em> roles
+          focused on Java and Spring Boot microservices, distributed systems, performance
+          optimization, and production AI workflows.
+        </p>
+        <div class="looking-tags">
+          <span class="looking-tag">Remote</span>
+          <span class="looking-tag">Hybrid</span>
+          <span class="looking-tag">On-site</span>
+          <span class="looking-tag">Orlando, FL</span>
+          <span class="looking-tag">Open to relocation</span>
         </div>
       </div>
     </div>
@@ -645,18 +676,15 @@
       <div class="contact-content">
         <div class="contact-prompt">// LET'S TALK</div>
         <h2 class="contact-headline">Open to <em>Senior Engineering</em><br />Opportunities.</h2>
-        <p class="contact-sub">Available for remote, hybrid, and on-site roles. Based in Orlando, FL. Open to relocation for the right opportunity.</p>
+        <p class="contact-sub">The fastest way to reach me is LinkedIn. Resume is one click away. Looking forward to connecting.</p>
         <div class="contact-actions">
-          <a href="mailto:aayushmaheshwarkar@gmail.com" class="btn btn-primary" aria-label="Email Aayush Nitin Maheshwarkar">
-            Email Me <span class="btn-arrow">→</span>
+          <a href="https://linkedin.com/in/aayush-nitin-maheshwarkar" class="btn btn-primary" target="_blank">
+            Connect on LinkedIn <span class="btn-arrow">→</span>
           </a>
-          <a href="./resume.pdf" class="btn btn-ghost" target="_blank" rel="noopener noreferrer" aria-label="View Aayush Nitin Maheshwarkar resume PDF">
-            Resume <span class="btn-arrow">→</span>
+          <a href="resume.pdf" class="btn btn-ghost" target="_blank">
+            Download Resume <span class="btn-arrow">↓</span>
           </a>
-          <a href="https://linkedin.com/in/aayush-nitin-maheshwarkar" class="btn btn-ghost" target="_blank" rel="noopener noreferrer" aria-label="Visit Aayush Nitin Maheshwarkar LinkedIn profile">
-            LinkedIn <span class="btn-arrow">→</span>
-          </a>
-          <a href="https://github.com/AayushNM" class="btn btn-ghost" target="_blank" rel="noopener noreferrer" aria-label="Visit Aayush Nitin Maheshwarkar GitHub profile">
+          <a href="https://github.com/AayushNM" class="btn btn-ghost" target="_blank">
             GitHub <span class="btn-arrow">→</span>
           </a>
         </div>
@@ -666,7 +694,6 @@
 
   <footer>
     <div class="footer-text">© 2026 · AAYUSH NITIN MAHESHWARKAR</div>
-    <div class="footer-text">LAST UPDATED · MAY 2026</div>
     <div class="footer-text">BUILT WITH HTML · CSS · JAVASCRIPT</div>
   </footer>
 
