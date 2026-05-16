@@ -482,27 +482,64 @@
             <div class="exp-company">Federal Express Corporation · Orlando, FL</div>
             <div class="exp-progression">Promotion: Full Stack Developer II → III (Feb 2023)</div>
             <ul class="exp-bullets">
-              <li><strong>$600M+ revenue impact</strong> — Developed and maintained enterprise Java and Spring Boot rating microservices serving 2.5M+ peak daily rate requests across the global rating platform.</li>
-              <li><strong>Quote Platform — <em>$450M billed / $1.8B quoted</em> across 69 markets</strong>: Modernized backend rating logic to support spot pricing outside contractual rates; FY23 contribution drove FedEx Hall of Fame recognition (FY24).</li>
-              <li><strong>Surcharge engine — $150M+ annualized revenue</strong> — Developed core Java/Spring Boot engine exposed via REST APIs for high-throughput surcharge assessment.</li>
-              <li><strong>Dangerous Goods Road — $41M direct + $1.2B linked</strong> — Led end-to-end development of dangerous-goods routing using Feign clients and a configurable rules engine; enabled migration of 34,000+ enterprise customers.</li>
-              <li><strong>~600ms latency reduction</strong> on customer-facing rate-quote API through proactive Okta JWT pre-caching using Caffeine refreshAfterWrite with async refresh.</li>
-              <li><strong>Production AI Governance — Microsoft Copilot</strong>: Owned quality standards and final-approval authority for LLM instruction sets across multiple enterprise platforms.</li>
-              <li><strong>Agentic AI pipeline — LangChain + Claude</strong>: Contributed to an agentic pipeline handling a projected 10x surge in error-correction volume, eliminating a 5-day manual remediation cycle.</li>
+              <li>
+                <strong>$600M+ revenue impact</strong> — Engineered Java and Spring Boot cloud-native rating microservices processing 2.5M+ peak daily requests across global pricing, surcharge, and dangerous-goods platforms, including contributions to ANCHOR ($208M) and PPFS ($200M NRB).
+              </li>
+              <li>
+                <strong>Quote Platform — <em>$450M billed / $1.8BN quoted</em> across 69 markets</strong>: Modernized backend rating logic to support spot pricing outside contractual rates — enabling customers and agents to receive one-off shipment quotes. FY23 contribution drove FedEx Hall of Fame recognition (FY24).
+              </li>
+              <li>
+                <strong>FSAS Surcharge Engine — $150M+ annualized revenue</strong>: Built core Java and Spring Boot surcharge calculation engine exposed via REST APIs, evaluating customer shipping behavior against configurable business rules. Dynamic Pricing platform expected to generate $500M+ in incremental revenue over five years.
+              </li>
+              <li>
+                <strong>Dangerous Goods Road — $41M direct + $1.2B linked revenue</strong>: Led end-to-end development of dangerous-goods surcharge logic using Feign clients and a configurable rules engine; enabled migration of 34,000+ TNT enterprise customers to FedEx Express channels.
+              </li>
+              <li>
+                <strong>PIECE Initiative — $51M annualized revenue</strong>: Contributed to the Parcel Invoice for Enhanced Customer Experience initiative, enabling granular multi-piece shipment rating using detailed shipment data.
+              </li>
+              <li>
+                <strong>~600ms latency reduction</strong> on customer-facing rate-quote API — diagnosed synchronous Okta JWT token-fetch as the dominant bottleneck and implemented proactive Caffeine refreshAfterWrite pre-caching with async background refresh, eliminating overhead from the pricing API. Pattern adopted by adjacent teams.
+              </li>
+              <li>
+                <strong>Production AI Governance — Microsoft Copilot</strong>: Owned quality standards and final approval authority for LLM instruction sets across REBS, VRS, RDES, and additional team applications — establishing evaluation criteria for clarity, completeness, security, and accuracy before production release.
+              </li>
+              <li>
+                <strong>Agentic AI pipeline — LangChain + Claude</strong>: Contributed to an agentic pipeline handling a projected 10x surge in error-correction volume from 2,000 to 20,000 daily shipments, eliminating a 5-day manual remediation cycle. Implemented database-level retry controls and Python automation for bulk data cleanup and revenue recovery.
+              </li>
+              <li>
+                <strong>Resilience and Observability</strong>: Implemented Resilience4j circuit breakers, retries, and fallback handling across downstream service calls with structured Log4j logging for production diagnostics and failure tracing.
+              </li>
+              <li>
+                <strong>Caching implementation</strong>: Implemented Caffeine Loading Cache across rating services by identifying high-value cache candidates including country data, maintaining pre-loaded state and reducing downstream service calls.
+              </li>
             </ul>
           </div>
         </div>
+
         <div class="exp-item fade-in">
           <div class="exp-date">Aug 2019 — Dec 2020</div>
           <div>
             <div class="exp-role">Teaching Assistant &amp; Research Co-Author</div>
             <div class="exp-company">Rensselaer Polytechnic Institute · Troy, NY</div>
             <ul class="exp-bullets">
-              <li>Mentored <strong>300+ students</strong> across Computer Organization (C, MIPS, x86 assembly) and Intro to Formal Logic and AI; conducted code reviews and supported proof construction in HyperSlate.</li>
-              <li>Co-authored <strong>peer-reviewed research</strong> published at the <em>AAAI 2020 Fall Symposium on AI for Social Good</em> — analyzed UN, UNICEF, and WHO datasets across 34 countries using Python and R.</li>
+              <li>Mentored <strong>300+ students</strong> across Computer Organization (C, MIPS, x86 assembly) and Intro to Formal Logic and AI; conducted code reviews and supported proof construction using HyperSlate.</li>
+              <li>Co-authored peer-reviewed research published at the <em>AAAI 2020 Fall Symposium on AI for Social Good</em>.</li>
+              <li>Analyzed <strong>UN, UNICEF, and WHO datasets</strong> across 34 countries using Python (Jupyter Notebooks) and R to study socioeconomic and geographic factors impacting malaria mortality.</li>
+              <li>Applied <strong>K-Means and hierarchical clustering algorithms</strong> to identify malaria mortality patterns across demographics and geographies.</li>
+              <li>Identified a <strong>statistically significant negative correlation</strong> between GDP and malaria death rates; produced data visualizations to communicate findings to a broad research audience.</li>
             </ul>
           </div>
         </div>
+
+        <div class="exp-item fade-in">
+          <div class="exp-date">Jan 2019 — Jul 2019</div>
+          <div>
+            <div class="exp-role">Software Engineer Intern</div>
+            <div class="exp-company">IBM India Pvt. Ltd. · Bangalore, India</div>
+            <ul class="exp-bullets">
+              <li>Performed performance and capacity planning for <strong>CICS Transaction Gateway v9.2</strong> using Z/OS, JCL, Java, and REST/JSON services, identifying and resolving production bottlenecks across enterprise transaction workloads.</li>
+            </ul>
+          </div>
       </div>
     </div>
   </section>
@@ -606,12 +643,16 @@
         <div class="ach-card fade-in">
           <div class="ach-year">FY24 · TEAM AWARD</div>
           <div class="ach-title">FedEx Hall of Fame Award</div>
-          <div class="ach-desc">Recognized for contributions to modernizing rating logic in support of the Quote Platform initiative — realizing $450M in billed revenue and $1.8BN in quoted revenue across 69 global markets in FY23.</div>
+          <div class="ach-desc">
+            The highest engineering recognition at FedEx, awarded to the team for contributions to the Quote Platform initiative — a modernization of FedEx's Spot Rate platform enabling customers and agents to receive one-off shipment quotes outside of contractual pricing. The initiative realized $450M in billed revenue and $1.8BN in quoted revenue across 69 global markets in FY23 after rolling out self-service capabilities that saved agents and customers significant time and cost.
+          </div>
         </div>
         <div class="ach-card fade-in">
           <div class="ach-year">2020 · PEER-REVIEWED</div>
           <div class="ach-title">AAAI Fall Symposium · Co-Author</div>
-          <div class="ach-desc">"Socioeconomic and Geographic Variations Impacting the Spread of Malaria." Published at the AAAI Fall Symposium on AI for Social Good. Cluster analysis of UN, UNICEF, and WHO datasets across 34 countries using Python and R.</div>
+          <div class="ach-desc">
+            "Socioeconomic and Geographic Variations Impacting the Spread of Malaria." Published at the AAAI Fall Symposium on AI for Social Good. Applied K-Means and hierarchical clustering to UN, UNICEF, and WHO datasets across 34 countries using Python and R, identifying a statistically significant negative correlation between GDP and malaria mortality rates.
+          </div>
           <a href="https://github.com/thilankam/MalariaAnalysis" class="ach-link" target="_blank">View on GitHub →</a>
         </div>
       </div>
@@ -626,6 +667,22 @@
         <div class="section-line"></div>
       </div>
       <div class="edu-list">
+        <div class="edu-row fade-in">
+          <div class="edu-dates">Aug 2025 — Present</div>
+          <div>
+            <div class="edu-degree">M.S. Organizational Leadership <em>(In Progress)</em></div>
+            <div class="edu-school">University of the Cumberlands · Williamsburg, KY</div>
+          </div>
+          <div class="edu-gpa">—</div>
+        </div>
+        <div class="edu-row fade-in">
+          <div class="edu-dates">Jan 2024 — Aug 2025</div>
+          <div>
+            <div class="edu-degree">M.S. Project Management</div>
+            <div class="edu-school">University of the Cumberlands · Williamsburg, KY</div>
+          </div>
+          <div class="edu-gpa">CGPA 3.971 / 4.0</div>
+        </div>
         <div class="edu-row fade-in">
           <div class="edu-dates">Aug 2019 — Dec 2020</div>
           <div>
